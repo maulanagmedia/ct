@@ -3,8 +3,11 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="modul_margin_big">16dp</dimen>
+    <dimen name="modul_margin_tanggung">12dp</dimen>
     <dimen name="modul_margin_default">8dp</dimen>
     <dimen name="modul_margin_small">4dp</dimen>
-    <dimen name="title_size">18sp</dimen>
+    <dimen name="title_size">16sp</dimen>
     <dimen name="menu_text_size">11sp</dimen>
+    <dimen name="btn_size">110dp</dimen>
 </resources>

@@ -16,45 +16,56 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:textSize="@dimen/title_size"
-                android:textColor="@color/color_title"
-                android:id="@+id/tv_download"
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Download" />
+                android:orientation="vertical"
+                android:background="@drawable/bg_input2"
+                android:padding="@dimen/modul_margin_default">
 
-            <TextView
-                android:textSize="@dimen/title_size"
-                android:textColor="@color/md_red_700"
-                android:id="@+id/tv_upload"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/modul_margin_default"
-                android:text="Upload" />
+                <TextView
+                    android:textSize="@dimen/title_size"
+                    android:textColor="@color/md_blue_800"
+                    android:id="@+id/tv_download"
+                    android:layout_marginLeft="@dimen/modul_margin_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Download" />
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/gv_live_download"
-                android:layout_width="fill_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="@dimen/modul_margin_default" />
+                <TextView
+                    android:textSize="@dimen/title_size"
+                    android:textColor="@color/md_red_700"
+                    android:id="@+id/tv_upload"
+                    android:layout_marginLeft="@dimen/modul_margin_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/modul_margin_small"
+                    android:text="Upload" />
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/gv_live_upload"
-                android:visibility="gone"
-                android:layout_width="fill_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="@dimen/modul_margin_default" />
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/gv_live_download"
+                    android:layout_width="fill_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="@dimen/modul_margin_default"
+                    android:backgroundTint="@color/color_white"/>
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/gv_live_upload"
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="@dimen/modul_margin_default" />
+            </LinearLayout>
 
             <Button
-                android:textColor="@color/color_white"
-                android:layout_gravity="right"
+                android:textColor="@color/color_black"
+                android:layout_gravity="center"
                 android:id="@id/btn_proses"
-                android:background="@drawable/btn_submit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:layout_marginTop="12dp"
+                android:background="@drawable/ic_btn"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:textSize="10sp"
+                android:layout_marginTop="64dp"
                 android:text="Mulai" />
         </LinearLayout>
     </ScrollView>

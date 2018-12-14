@@ -26,7 +26,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import id.net.gmedia.gmedialiveconnection.NotificationUtils.InitFirebaseSetting;
 import id.net.gmedia.gmedialiveconnection.R;
@@ -94,6 +93,7 @@ public class MainLiveChart extends Fragment {
         viewportDownload.setMinY(0);
         viewportDownload.setScrollable(true);
         viewportDownload.setXAxisBoundsManual(true);
+        viewportDownload.setBorderColor(Color.WHITE);
 
         /*viewportUpload = gvLiveUpload.getViewport();
         viewportUpload.setYAxisBoundsManual(true);
@@ -143,8 +143,8 @@ public class MainLiveChart extends Fragment {
 
                     disconnectLive();
                     btnProses.setText("Mulai");
-                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.btn_submit));
-                    ApiVolley.cancelALL();
+                    btnProses.setTextColor(context.getResources().getColor(R.color.color_black));
+                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.ic_btn));
                 }else{
 
                     isActive = true;
@@ -156,7 +156,8 @@ public class MainLiveChart extends Fragment {
                     listYUpload = new ArrayList<>();
 
                     btnProses.setText("Berhenti");
-                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.btn_cancel));
+                    btnProses.setTextColor(context.getResources().getColor(R.color.color_white));
+                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.ic_btn_stop));
 
                     getDataLiveTraffict();
                 }
@@ -272,23 +273,26 @@ public class MainLiveChart extends Fragment {
 
     public static void disconnectLive(){
 
-        ApiVolley.cancelALL();
-        isActive = false;
-        btnProses.setText("Mulai");
-        btnProses.setBackground(context.getResources().getDrawable(R.drawable.btn_submit));
-        gvLiveDownload.removeAllSeries();
-        //gvLiveUpload.removeAllSeries();
+        try {
+            ApiVolley.cancelALL();
+            isActive = false;
+            btnProses.setText("Mulai");
+            btnProses.setTextColor(context.getResources().getColor(R.color.color_black));
+            btnProses.setBackground(context.getResources().getDrawable(R.drawable.ic_btn));
+            gvLiveDownload.removeAllSeries();
+            //gvLiveUpload.removeAllSeries();
 
-        seriesDownload = new LineGraphSeries<DataPoint>();
-        seriesUpload = new LineGraphSeries<DataPoint>();
-        seriesUpload.setColor(Color.RED);
+            seriesDownload = new LineGraphSeries<DataPoint>();
+            seriesUpload = new LineGraphSeries<DataPoint>();
+            seriesUpload.setColor(Color.RED);
 
-        gvLiveDownload.addSeries(seriesDownload);
-        gvLiveDownload.addSeries(seriesUpload);
-        tvDownload.setText("Download");
-        tvUpload.setText("Upload");
+            gvLiveDownload.addSeries(seriesDownload);
+            gvLiveDownload.addSeries(seriesUpload);
+            tvDownload.setText("Download");
+            tvUpload.setText("Upload");
 
-        stopTraffict();
+            stopTraffict();
+        }catch (Exception e){}
     }
 
     private static void stopTraffict() {

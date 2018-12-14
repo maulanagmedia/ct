@@ -2,6 +2,7 @@ package id.net.gmedia.gmedialiveconnection;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +38,10 @@ public class SpashScreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 public void run() {
                     //startActivity(new Intent(SplashScreen.this, DaftarVideo.class));
-                    startActivity(new Intent(SpashScreen.this, LoginScreen.class));
+                    Intent intent = new Intent(SpashScreen.this, LoginScreen.class);
+                    ActivityOptionsCompat options = ActivityOptionsCompat.
+                            makeSceneTransitionAnimation(SpashScreen.this, (View)ivLogo, "logo");
+                    startActivity(intent, options.toBundle());
                     finish();
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
@@ -46,10 +50,11 @@ public class SpashScreen extends AppCompatActivity {
             //splashLoaded = true;
         }else{
 
-            //Intent goToMainActivity = new Intent(SplashScreen.this, DaftarVideo.class);
             Intent goToMainActivity = new Intent(SpashScreen.this, LoginScreen.class);
             goToMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivity(goToMainActivity);
+            ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(this, (View)ivLogo, "logo");
+            startActivity(goToMainActivity, options.toBundle());
             finish();
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

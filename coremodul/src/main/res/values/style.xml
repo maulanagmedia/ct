@@ -6,6 +6,7 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Theme.AppCompat.Light.NoActionBar.WithTitleBar" parent="@style/Theme.AppCompat.Light">

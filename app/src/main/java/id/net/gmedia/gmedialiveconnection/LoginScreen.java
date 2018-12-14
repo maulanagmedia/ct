@@ -68,7 +68,7 @@ public class LoginScreen extends AppCompatActivity {
         edtPassword = (EditText) findViewById(R.id.edt_password);
         btnLogin = (Button) findViewById(R.id.btn_login);
 
-        /*if(session.isLoggedIn())*/ redirectToMain();
+        if(session.isLoggedIn()) redirectToMain();
     }
 
     private void initEvent() {
