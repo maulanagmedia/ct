@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainTorch.MainTorch">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_proses"
+            android:id="@+id/lv_torch"
+            android:paddingTop="@dimen/modul_margin_small"
+            android:divider="@null">
+
+        </ListView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_submit"
+            android:text="Mulai"
+            android:id="@+id/btn_proses"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:textColor="@color/color_white"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/btn_proses"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/btn_cancel"
+            android:text="Hentikan"
+            android:id="@+id/btn_stop"
+            android:textColor="@color/color_white"/>
+    </RelativeLayout>
+
+</FrameLayout>
