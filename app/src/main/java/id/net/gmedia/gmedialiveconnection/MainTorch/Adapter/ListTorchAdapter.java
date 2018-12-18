@@ -67,8 +67,8 @@ public class ListTorchAdapter extends ArrayAdapter{
         holder.tvItem1.setText(itemSelected.getItem2());
         holder.tvItem2.setText(itemSelected.getItem3());
         holder.tvItem3.setText(itemSelected.getItem4());
-        holder.tvItem4.setText(itemSelected.getItem5());
-        holder.tvItem5.setText(itemSelected.getItem6());
+        holder.tvItem4.setText(itemSelected.getItem6());
+        holder.tvItem5.setText(itemSelected.getItem5());
 
         return convertView;
 

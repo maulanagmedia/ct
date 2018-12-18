@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 
 import com.maulana.custommodul.ApiVolley;
 import com.maulana.custommodul.CustomItem;
+import com.maulana.custommodul.ItemValidation;
 import com.maulana.custommodul.SessionManager;
 
 import org.json.JSONArray;
@@ -22,6 +23,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import id.net.gmedia.gmedialiveconnection.MainTorch.Adapter.ListTorchAdapter;
@@ -162,8 +165,23 @@ public class MainTorch extends Fragment {
                                     ,jo.getString("ip_dst")
                                     ,jo.getString("tr_download") + " Mb"
                                     ,jo.getString("tr_upload") + " Mb"
+                                    ,jo.getString("tr_download")
                             ));
                         }
+
+                        Collections.sort(listTorch, new Comparator<CustomItem>() {
+                            @Override
+                            public int compare(CustomItem lhs, CustomItem rhs) {
+                                // -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
+
+                                ItemValidation iv = new ItemValidation();
+
+                                double downloadL = iv.parseNullDouble(lhs.getItem7());
+                                double downloadR = iv.parseNullDouble(rhs.getItem7());
+
+                                return downloadL > downloadR ? -1 : (downloadL < downloadR) ? 1 : 0;
+                            }
+                        });
                     }
 
                 } catch (JSONException e) {
