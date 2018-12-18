@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Gmedia Client Tools</string>
     <string name="title_home">Live Chart</string>
-    <string name="title_dashboard">Torch</string>
+    <string name="title_dashboard">Bandwith Usage</string>
     <string name="title_notifications">Ping</string>
 
     <!-- TODO: Remove or change this placeholder text -->

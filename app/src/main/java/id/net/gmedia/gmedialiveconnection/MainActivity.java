@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new MainLiveChart();
                 break;
             case 1:
-                setTitle("Torch");
+                setTitle(context.getResources().getString(R.string.title_dashboard));
                 fragment = new MainTorch();
                 break;
             case 2:
