@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.github.anastr.speedviewlib.PointerSpeedometer;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
@@ -28,7 +29,6 @@ import fr.bmartel.speedtest.SpeedTestSocket;
 import fr.bmartel.speedtest.inter.ISpeedTestListener;
 import fr.bmartel.speedtest.model.SpeedTestError;
 import id.net.gmedia.gmedialiveconnection.R;
-import pl.pawelkleczkowski.customgauge.CustomGauge;
 
 public class MainPing extends Fragment {
 
@@ -36,12 +36,30 @@ public class MainPing extends Fragment {
     private View layout;
     private ItemValidation iv = new ItemValidation();
 
-    private CustomGauge gauge2;
-
     private int i;
-    private TextView text2;
     private Button btnProses;
     private TextView tvUpload, tvDownload;
+    private static PointerSpeedometer psTest;
+    private static float maxLenth = 10;
+
+    //download
+    private final static int SOCKET_TIMEOUT = 5000;
+    private final static String SPEED_TEST_SERVER_URI_DL = "http://ipv4.ikoula.testdebit.info/10M.iso";
+
+    //upload
+
+    /**
+     * spedd examples server uri.
+     */
+    private static final String SPEED_TEST_SERVER_URI_UL = "http://ipv4.ikoula.testdebit.info/";
+    //private static final String SPEED_TEST_SERVER_URI_UL = "https://testmy.net/upload/";
+
+    /**
+     * upload 10Mo file size.
+     */
+    private static final int FILE_SIZE = 10000000;
+
+    private static final String TAG = "PING";
 
     public MainPing() {
         // Required empty public constructor
@@ -69,13 +87,9 @@ public class MainPing extends Fragment {
 
         tvUpload = (TextView) layout.findViewById(R.id.tv_upload);
         tvDownload = (TextView) layout.findViewById(R.id.tv_download);
+        psTest = (PointerSpeedometer) layout.findViewById(R.id.ps_test);
         btnProses = (Button) layout.findViewById(R.id.btn_proses);
-        gauge2 = layout.findViewById(R.id.gauge2);
-        gauge2.setEndValue(100);
-        gauge2.setStartValue(0);
-
-        text2  = layout.findViewById(R.id.textView2);
-        text2.setText(Integer.toString(gauge2.getValue()));
+        psTest.speedTo(0);
 
     }
 
@@ -85,91 +99,160 @@ public class MainPing extends Fragment {
 
             @Override
             public void onClick(View v) {
-                /*new Thread() {
-                    public void run() {
-                        for (i = 0; i <= 100; i++) {
-                            try {
-                                ((Activity)context).runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
 
-                                        gauge2.setValue(i);
-                                        text2.setText(Integer.toString(gauge2.getValue()));
-                                    }
-                                });
-                                Thread.sleep(50);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                }.start();*/
-                gauge2.setValue(0);
-                text2.setText(Integer.toString(gauge2.getValue()));
-
-                new SpeedTestTask().execute();
+                maxLenth = 10;
+                psTest.setMaxSpeed(maxLenth);
+                psTest.speedTo(maxLenth);
+                tvDownload.setText("Processing...");
+                tvUpload.setText("");
+                new getDownladTraffic().execute();
             }
 
         });
     }
 
-    public class SpeedTestTask extends AsyncTask<Void, Void, String> {
+    public class getDownladTraffic extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... params) {
 
-            SpeedTestSocket speedTestSocket = new SpeedTestSocket();
+            // instantiate speed examples
+            final SpeedTestSocket speedTestSocket = new SpeedTestSocket();
 
-            // add a listener to wait for speedtest completion and progress
+            //set timeout for download
+            speedTestSocket.setSocketTimeout(SOCKET_TIMEOUT);
+
+            // add a listener to wait for speed examples completion and progress
             speedTestSocket.addSpeedTestListener(new ISpeedTestListener() {
 
                 @Override
                 public void onCompletion(final SpeedTestReport report) {
-                    // called when download/upload is finished
+
+                    //called when download/upload is complete
+                    ((Activity)context).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            psTest.setUnit(getUnit(report.getTransferRateBit()));
+                            psTest.setMaxSpeed(getSpeed(report.getTransferRateBit()) + 10);
+                            psTest.speedTo(getSpeed(report.getTransferRateBit()));
+
+                            tvDownload.setText(iv.floatToString(getSpeed(report.getTransferRateBit())) +" "+ getUnit(report.getTransferRateBit()));
+                            tvUpload.setText("");
+                            maxLenth = 10;
+                            psTest.speedTo(maxLenth);
+                            new getUploadTraffic().execute();
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final SpeedTestError speedTestError, final String errorMessage) {
+
+                    Log.d(TAG, "onError: " + errorMessage);
+                }
+
+                @Override
+                public void onProgress(final float percent, final SpeedTestReport downloadReport) {
 
                     ((Activity)context).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
 
-                            tvDownload.setText(getSpeed(report.getTransferRateBit()));
+                            maxLenth = getSpeed(downloadReport.getTransferRateBit()) + 10;
+                            psTest.setMaxSpeed(maxLenth);
+                            psTest.setUnit(getUnit(downloadReport.getTransferRateBit()));
+                            psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()));
+
+                            tvDownload.setText("Processing...");
+                            tvUpload.setText("");
                         }
                     });
-
-                    Log.v("speedtest", "[COMPLETED] rate in octet/s : " + report.getTransferRateOctet());
-                    Log.v("speedtest", "[COMPLETED] rate in bit/s   : " + report.getTransferRateBit());
-                }
-
-                @Override
-                public void onError(SpeedTestError speedTestError, String errorMessage) {
-                    // called when a download/upload error occur
-                }
-
-                @Override
-                public void onProgress(final float percent, final SpeedTestReport report) {
-                    // called to notify download/upload progress
-                    ((Activity)context).runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-
-                            gauge2.setValue((int) percent);
-                            text2.setText(Integer.toString(gauge2.getValue()) + " %");
-                            tvDownload.setText(getSpeed(report.getTransferRateBit()));
-                        }
-                    });
-
-                    Log.v("speedtest", "[PROGRESS] progress : " + percent + "%");
-                    Log.v("speedtest", "[PROGRESS] rate in octet/s : " + report.getTransferRateOctet());
-                    Log.v("speedtest", "[PROGRESS] rate in bit/s   : " + report.getTransferRateBit());
                 }
             });
 
-            speedTestSocket.startDownload("http://ipv4.ikoula.testdebit.info/1M.iso");
+            speedTestSocket.startDownload(SPEED_TEST_SERVER_URI_DL);
 
             return null;
         }
     }
 
-    public String getSpeed(BigDecimal size) {
+    public class getUploadTraffic extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            // instantiate speed examples
+            final SpeedTestSocket speedTestSocket = new SpeedTestSocket();
+
+            //set timeout for download
+            speedTestSocket.setSocketTimeout(SOCKET_TIMEOUT);
+
+            //speedTestSocket.setUploadStorageType(UploadStorageType.FILE_STORAGE);
+
+            // add a listener to wait for speed examples completion and progress
+            speedTestSocket.addSpeedTestListener(new ISpeedTestListener() {
+
+                @Override
+                public void onCompletion(final SpeedTestReport report) {
+
+                    ((Activity)context).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            psTest.setUnit(getUnit(report.getTransferRateBit()));
+                            psTest.setMaxSpeed(getSpeed(report.getTransferRateBit()) + 10);
+                            psTest.speedTo(getSpeed(report.getTransferRateBit()));
+
+                            tvUpload.setText(iv.floatToString(getSpeed(report.getTransferRateBit())) +" "+ getUnit(report.getTransferRateBit()));
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(final SpeedTestError speedTestError, final String errorMessage) {
+
+                    Log.d(TAG, "onError: " + errorMessage);
+                }
+
+                @Override
+                public void onProgress(final float percent, final SpeedTestReport downloadReport) {
+
+                    ((Activity)context).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            maxLenth = getSpeed(downloadReport.getTransferRateBit()) + 10;
+                            psTest.setMaxSpeed(maxLenth);
+                            psTest.setUnit(getUnit(downloadReport.getTransferRateBit()));
+                            psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()));
+
+                            tvUpload.setText("Processing...");
+                        }
+                    });
+                }
+            });
+
+            speedTestSocket.startUpload(SPEED_TEST_SERVER_URI_UL, FILE_SIZE);
+
+            return null;
+        }
+    }
+
+    private static float getSpeed(BigDecimal size) {
+
+        long sizeCeil = size.longValue();
+
+        if (sizeCeil <= 0)
+            return 0;
+
+        final String[] units = new String[] { "b/s", "Kb/s", "Mb/s", "Gb/s", "Tb/s" };
+        int digitGroups = (int) (Math.log10(sizeCeil) / Math.log10(1024));
+
+        return (float) (sizeCeil / Math.pow(1024, digitGroups));
+    }
+
+    private static String getUnit(BigDecimal size) {
 
         long sizeCeil = size.longValue();
 
@@ -179,6 +262,6 @@ public class MainPing extends Fragment {
         final String[] units = new String[] { "b/s", "Kb/s", "Mb/s", "Gb/s", "Tb/s" };
         int digitGroups = (int) (Math.log10(sizeCeil) / Math.log10(1024));
 
-        return new DecimalFormat("#,##0.#").format(sizeCeil / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
+        return units[digitGroups];
     }
 }

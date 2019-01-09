@@ -685,6 +685,10 @@ public class ItemValidation {
         return String.format("%.1f", number).replace(",",".");
     }
 
+    public String floatToString(float number){
+        return String.format("%.1f", number).replace(",",".");
+    }
+
     public String doubleToStringRound(Double number){
         return String.format("%.0f", number).replace(",",".");
     }

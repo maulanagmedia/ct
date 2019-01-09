@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private int state = 0;
     private SessionManager session;
+    private static int stateFragment = -1;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -84,8 +85,12 @@ public class MainActivity extends AppCompatActivity {
         buttonNavigation = (BottomNavigationView) findViewById(R.id.navigation);
         buttonNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        ChangeFragment(1);
-        ChangeFragment(0);
+        if(stateFragment == -1){
+
+            ChangeFragment(1);
+            ChangeFragment(0);
+        }
+
     }
 
     @Override
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(MainLiveChart.isActive) MainLiveChart.disconnectLive();
         if(MainTorch.isActive) MainTorch.disconnectLive();
+        stateFragment = stateChecked;
 
         switch (stateChecked){
             case 0:

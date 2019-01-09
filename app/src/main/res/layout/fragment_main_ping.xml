@@ -39,7 +39,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="Download"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/md_blue_800"
                     android:layout_marginRight="@dimen/modul_margin_small"
                     android:textSize="12sp"/>
 
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:text="Ping"
                     android:visibility="gone"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/md_blue_800"
                     android:layout_marginRight="@dimen/modul_margin_small"
                     android:id="@+id/tv_ping"
                     android:textSize="20sp"/>
@@ -74,7 +74,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/md_blue_800"
                     android:layout_marginRight="@dimen/modul_margin_small"
                     android:id="@+id/tv_download"
                     android:textSize="20sp"/>
@@ -94,35 +94,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/activity_vertical_margin">
 
-                <pl.pawelkleczkowski.customgauge.CustomGauge
-                    android:id="@+id/gauge2"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerHorizontal="true"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingTop="10dp"
-                    app:gaugeEndValue="100"
-                    app:gaugeStartValue="0"
-                    app:gaugePointEndColor="@color/md_red_500"
-                    app:gaugePointStartColor="@color/md_red_300"
-                    app:gaugeStartAngle="135"
-                    app:gaugeStrokeCap="ROUND"
-                    app:gaugeStrokeColor="@color/md_grey_400"
-                    app:gaugeStrokeWidth="10dp"
-                    app:gaugeSweepAngle="270" />
-
-                <TextView
-                    android:id="@+id/textView2"
+                <com.github.anastr.speedviewlib.PointerSpeedometer
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/gauge2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="48dp"
-                    android:text="0"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:id="@+id/ps_test"
+                    app:sv_withTremble="false"
+                    app:sv_unit=""
+                    android:layout_centerInParent="true"/>
+
             </RelativeLayout>
 
             <Button
