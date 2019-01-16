@@ -1,7 +1,9 @@
 package id.net.gmedia.gmedialiveconnection.MainPing;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
+import android.net.TrafficStats;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -22,13 +24,17 @@ import com.maulana.custommodul.ItemValidation;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.List;
 import java.util.Random;
 
 import fr.bmartel.speedtest.SpeedTestReport;
 import fr.bmartel.speedtest.SpeedTestSocket;
 import fr.bmartel.speedtest.inter.ISpeedTestListener;
 import fr.bmartel.speedtest.model.SpeedTestError;
+import fr.bmartel.speedtest.utils.SpeedTestUtils;
 import id.net.gmedia.gmedialiveconnection.R;
+
+import static android.content.Context.ACTIVITY_SERVICE;
 
 public class MainPing extends Fragment {
 
@@ -44,7 +50,8 @@ public class MainPing extends Fragment {
 
     //download
     private final static int SOCKET_TIMEOUT = 5000;
-    private final static String SPEED_TEST_SERVER_URI_DL = "http://ipv4.ikoula.testdebit.info/10M.iso";
+    //private final static String SPEED_TEST_SERVER_URI_DL = "http://ipv4.ikoula.testdebit.info/10M.iso";
+    private final static String SPEED_TEST_SERVER_URI_DL = "https://erpsmg.gmedia.id/client_tools/file/10M.iso";
 
     //upload
 
@@ -52,7 +59,9 @@ public class MainPing extends Fragment {
      * spedd examples server uri.
      */
     private static final String SPEED_TEST_SERVER_URI_UL = "http://ipv4.ikoula.testdebit.info/";
-    //private static final String SPEED_TEST_SERVER_URI_UL = "https://testmy.net/upload/";
+    String fileName = SpeedTestUtils.generateFileName() + ".txt";
+    //private static final String SPEED_TEST_SERVER_URI_UL = "ftp://speedtest.tele2.net/upload/" + fileName;
+    //private static final String SPEED_TEST_SERVER_URI_UL = "http://192.168.10.104/perkasamobile/pol/file";
 
     /**
      * upload 10Mo file size.
@@ -141,6 +150,7 @@ public class MainPing extends Fragment {
                             tvUpload.setText("");
                             maxLenth = 10;
                             psTest.speedTo(maxLenth);
+                            mStartTX = 0;
                             new getUploadTraffic().execute();
                         }
                     });
@@ -177,6 +187,7 @@ public class MainPing extends Fragment {
         }
     }
 
+    private long mStartTX = 0;
     public class getUploadTraffic extends AsyncTask<Void, Void, String> {
 
         @Override
@@ -227,6 +238,28 @@ public class MainPing extends Fragment {
                             psTest.setUnit(getUnit(downloadReport.getTransferRateBit()));
                             psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()));
 
+                            // Get running processes
+                            long txBytes = TrafficStats.getTotalRxBytes() - mStartTX;
+                            mStartTX = TrafficStats.getTotalRxBytes();
+                            String uploadX = Long.toString(txBytes) + " bytes";
+                            if (txBytes >= 1024) {
+                                // KB or more
+                                long txKb = txBytes / 1024;
+                                uploadX = Long.toString(txKb) + " KBs";
+                                if (txKb >= 1024) {
+                                    // MB or more
+                                    long txMB = txKb / 1024;
+                                    uploadX = Long.toString(txMB) + " MBs";
+                                    if (txMB >= 1024) {
+                                        // GB or more
+                                        long txGB = txMB / 1024;
+                                        uploadX = Long.toString(txGB);
+                                    }// rxMB>1024
+                                }// rxKb > 1024
+                            }// rxBytes>=1024
+
+                            //Log.e("Total", "Bytes received " + android.net.TrafficStats.getMobileTxBytes());
+                            Log.e("Total", "Bytes received " + uploadX);
                             tvUpload.setText("Processing...");
                         }
                     });
@@ -264,4 +297,6 @@ public class MainPing extends Fragment {
 
         return units[digitGroups];
     }
+
+
 }
