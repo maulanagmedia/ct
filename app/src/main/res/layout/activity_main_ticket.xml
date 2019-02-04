@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainTicket.MainTicket"
+    android:background="@color/color_white">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header"
+        android:id="@+id/v_header"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:id="@+id/rg_tab"
+        android:layout_margin="@dimen/modul_margin_tanggung"
+        android:layout_below="@id/v_header">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/radio_hight"
+            android:button="@null"
+            android:gravity="center"
+            android:id="@+id/rb_tab1"
+            android:textColor="@color/radio_color"
+            android:text="Complaint"
+            android:background="@drawable/radio_left"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/radio_hight"
+            android:button="@null"
+            android:id="@+id/rb_tab2"
+            android:text="Request"
+            android:textColor="@color/radio_color"
+            android:gravity="center"
+            android:background="@drawable/radio_mid"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/rb_tab3"
+            android:layout_height="@dimen/radio_hight"
+            android:button="@null"
+            android:text="BOD"
+            android:textColor="@color/radio_color"
+            android:gravity="center"
+            android:background="@drawable/radio_right"/>
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rg_tab"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navigation"/>
+
+</RelativeLayout>

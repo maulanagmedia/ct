@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainTicket.Fragment.MainRequest">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/ll_header"
+            android:layout_marginTop="@dimen/modul_margin_tanggung"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_black"
+                android:gravity="center"
+                android:text="History"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/ll_date"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.8"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black"
+                    android:gravity="center"
+                    android:text=""
+                    android:id="@+id/tv_date1"/>
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size0"
+                    android:layout_height="@dimen/icon_size0"
+                    android:src="@mipmap/ic_date"
+                    android:id="@+id/iv_date1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black"
+                    android:layout_marginLeft="@dimen/modul_margin_default"
+                    android:text="-"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.8"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black"
+                    android:gravity="center"
+                    android:text=""
+                    android:id="@+id/tv_date2" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size0"
+                    android:layout_height="@dimen/icon_size0"
+                    android:src="@mipmap/ic_date"
+                    android:id="@+id/iv_date2"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_header"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="13 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tambah kecepatan internet ri router 2"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_on_progres"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="13 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tambah router di lantai 10"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_on_progres"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="12 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tambah line telepon"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_solve"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="11 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Batasi pemakaian youtube hanya bisa diakses jam 16.00 hingga 24.00"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_solve"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

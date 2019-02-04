@@ -45,6 +45,11 @@ public class ImageUtils {
         return Base64.encodeToString(outputStream.toByteArray(), Base64.DEFAULT);
     }
 
+    public void LoadPromoImage(Context context, String uri, final ImageView image){
+
+        Picasso.with(context).load(Uri.parse(uri)).into(image);
+    }
+
     public static Uri getImageUri(Context context, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);

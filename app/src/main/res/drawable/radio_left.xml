@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+
+        <shape android:shape="rectangle">
+
+            <stroke android:color="@color/color_grey0" android:width="@dimen/line_size"></stroke>
+            <solid android:color="@color/color_white"></solid>
+            <corners android:bottomLeftRadius="@dimen/radius_radion"
+                android:topLeftRadius="@dimen/radius_radion"></corners>
+        </shape>
+    </item>
+    <item android:state_checked="true">
+
+        <shape android:shape="rectangle">
+
+            <stroke android:color="@color/color_grey0" android:width="@dimen/line_size"></stroke>
+            <solid android:color="@color/color_white"></solid>
+            <corners android:bottomLeftRadius="@dimen/radius_radion"
+                android:topLeftRadius="@dimen/radius_radion"></corners>
+        </shape>
+    </item>
+    <item android:state_focused="true" >
+
+        <shape android:shape="rectangle">
+
+            <stroke android:color="@color/color_grey0" android:width="@dimen/line_size"></stroke>
+            <solid android:color="@color/color_white"></solid>
+            <corners android:bottomLeftRadius="@dimen/radius_radion"
+                android:topLeftRadius="@dimen/radius_radion"></corners>
+        </shape>
+    </item>
+    <item>
+
+        <shape android:shape="rectangle">
+
+            <stroke android:color="@color/color_grey0" android:width="@dimen/line_size"></stroke>
+            <solid android:color="@color/color_grey0"></solid>
+            <corners android:bottomLeftRadius="@dimen/radius_radion"
+                android:topLeftRadius="@dimen/radius_radion"></corners>
+        </shape>
+    </item>
+</selector>

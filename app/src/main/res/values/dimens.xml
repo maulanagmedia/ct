@@ -3,11 +3,29 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="modul_margin_god">64dp</dimen>
+    <dimen name="modul_margin_mega">52dp</dimen>
+    <dimen name="modul_margin_super">32dp</dimen>
     <dimen name="modul_margin_big">16dp</dimen>
     <dimen name="modul_margin_tanggung">12dp</dimen>
     <dimen name="modul_margin_default">8dp</dimen>
     <dimen name="modul_margin_small">4dp</dimen>
+    <dimen name="modul_margin_tiny">4dp</dimen>
     <dimen name="title_size">16sp</dimen>
     <dimen name="menu_text_size">11sp</dimen>
     <dimen name="btn_size">110dp</dimen>
+    <dimen name="btn_size_small">90dp</dimen>
+    <dimen name="line_size">1dp</dimen>
+    <dimen name="line_size1">2dp</dimen>
+    <dimen name="line_size2">3dp</dimen>
+    <dimen name="btn_text_size">20dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="icon_size0">24dp</dimen>
+    <dimen name="icon_size">32dp</dimen>
+    <dimen name="radius_radion">15dp</dimen>
+    <dimen name="radio_hight">40dp</dimen>
+    <dimen name="text_side">18sp</dimen>
 </resources>

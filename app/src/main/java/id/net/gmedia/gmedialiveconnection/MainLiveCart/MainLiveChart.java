@@ -81,8 +81,9 @@ public class MainLiveChart extends Fragment {
         btnProses = (Button) layout.findViewById(R.id.btn_proses);
 
         seriesDownload = new LineGraphSeries<DataPoint>();
+        seriesDownload.setColor(context.getResources().getColor(R.color.color_trafd));
         seriesUpload = new LineGraphSeries<DataPoint>();
-        seriesUpload.setColor(Color.RED);
+        seriesUpload.setColor(context.getResources().getColor(R.color.color_trafu));
 
         gvLiveDownload.addSeries(seriesDownload);
         gvLiveDownload.addSeries(seriesUpload);
@@ -143,8 +144,8 @@ public class MainLiveChart extends Fragment {
 
                     disconnectLive();
                     btnProses.setText("Mulai");
-                    btnProses.setTextColor(context.getResources().getColor(R.color.color_black));
-                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.ic_btn));
+                    btnProses.setTextColor(context.getResources().getColor(R.color.color_default));
+                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.btn_oval_blue));
                 }else{
 
                     isActive = true;
@@ -156,8 +157,8 @@ public class MainLiveChart extends Fragment {
                     listYUpload = new ArrayList<>();
 
                     btnProses.setText("Berhenti");
-                    btnProses.setTextColor(context.getResources().getColor(R.color.color_white));
-                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.ic_btn_stop));
+                    btnProses.setTextColor(context.getResources().getColor(R.color.color_red));
+                    btnProses.setBackground(context.getResources().getDrawable(R.drawable.btn_oval_red));
 
                     getDataLiveTraffict();
                 }
@@ -277,14 +278,15 @@ public class MainLiveChart extends Fragment {
             ApiVolley.cancelALL();
             isActive = false;
             btnProses.setText("Mulai");
-            btnProses.setTextColor(context.getResources().getColor(R.color.color_black));
-            btnProses.setBackground(context.getResources().getDrawable(R.drawable.ic_btn));
+            btnProses.setTextColor(context.getResources().getColor(R.color.color_default));
+            btnProses.setBackground(context.getResources().getDrawable(R.drawable.btn_oval_blue));
             gvLiveDownload.removeAllSeries();
             //gvLiveUpload.removeAllSeries();
 
             seriesDownload = new LineGraphSeries<DataPoint>();
+            seriesDownload.setColor(context.getResources().getColor(R.color.color_trafd));
             seriesUpload = new LineGraphSeries<DataPoint>();
-            seriesUpload.setColor(Color.RED);
+            seriesUpload.setColor(context.getResources().getColor(R.color.color_trafu));
 
             gvLiveDownload.addSeries(seriesDownload);
             gvLiveDownload.addSeries(seriesUpload);

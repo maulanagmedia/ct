@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginScreen"
-    android:background="@drawable/ic_bg">
+    android:background="@drawable/ic_bg_login">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="@dimen/modul_margin_god"
             android:layout_gravity="center">
 
             <ImageView
@@ -24,56 +25,123 @@
                 android:transitionName="logo"
                 android:layout_height="140dp"
                 android:id="@+id/iv_logo"
+                android:visibility="gone"
                 android:src="@drawable/ic_logo"/>
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
-                android:padding="@dimen/modul_margin_big"
-                android:hint="Masukkan ID Sirkuit Anda"
-                android:textColor="@color/color_grey2"
-                android:textColorHint="@color/color_grey"
-                android:id="@+id/edt_username"
-                android:textSize="15sp"
+                android:text="@string/app_name"
                 android:gravity="center"
-                android:layout_marginTop="32dp"
-                android:layout_marginLeft="@dimen/modul_margin_big"
-                android:layout_marginRight="@dimen/modul_margin_big"
-                android:inputType="textPersonName"
-                android:imeOptions="actionNext"/>
+                android:textAllCaps="true"
+                android:textSize="30sp"
+                android:textColor="@color/color_white"/>
 
-            <EditText
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
-                android:padding="@dimen/modul_margin_big"
-                android:text=""
-                android:hint="Masukkan Password Anda"
-                android:id="@+id/edt_password"
-                android:textColor="@color/color_grey2"
-                android:textColorHint="@color/color_grey"
-                android:textSize="15sp"
-                android:gravity="center"
                 android:layout_marginTop="32dp"
                 android:layout_marginLeft="@dimen/modul_margin_big"
-                android:layout_marginRight="@dimen/modul_margin_big"
-                android:inputType="textPassword"
-                android:imeOptions="actionDone"/>
+                android:layout_marginRight="@dimen/modul_margin_big">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@mipmap/ic_username"
+                    android:id="@+id/iv_username"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/modul_margin_big"
+                    android:paddingLeft="@dimen/modul_margin_default"
+                    android:paddingRight="@dimen/modul_margin_default"
+                    android:backgroundTint="@color/color_white"
+                    android:background="@color/color_trasnparent"
+                    android:hint="Username"
+                    android:gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/color_white"
+                    android:textColorHint="@color/color_white"
+                    android:id="@+id/edt_username"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@id/iv_username"
+                    android:text=""
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionNext"/>
+
+                <View
+                    android:id="@+id/line_1"
+                    android:layout_below="@id/iv_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:background="@color/color_white"
+                    android:layout_marginTop="@dimen/modul_margin_default"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="@dimen/modul_margin_big"
+                android:layout_marginRight="@dimen/modul_margin_big">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@mipmap/ic_password"
+                    android:id="@+id/iv_password"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_trasnparent"
+                    android:paddingTop="@dimen/modul_margin_big"
+                    android:paddingLeft="@dimen/modul_margin_default"
+                    android:paddingRight="@dimen/modul_margin_default"
+                    android:text=""
+                    android:hint="Password"
+                    android:id="@+id/edt_password"
+                    android:textColor="@color/color_white"
+                    android:textColorHint="@color/color_white"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@id/iv_password"
+                    android:gravity="center"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"/>
+
+                <View
+                    android:id="@+id/line_2"
+                    android:layout_below="@id/iv_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size"
+                    android:background="@color/color_white"
+                    android:layout_marginTop="@dimen/modul_margin_default"/>
+
+            </RelativeLayout>
 
             <Button
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
                 android:layout_gravity="center"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/btn_ok"
-                android:text="Sign in"
-                android:textSize="12sp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/btn_default"
+                android:text="Login"
+                android:textSize="@dimen/btn_text_size"
                 android:id="@+id/btn_login"
-                android:textColor="@color/color_black"/>
+                android:textColor="@color/color_white"/>
 
         </LinearLayout>
 
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

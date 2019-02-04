@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/modul_margin_big"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_w_billing"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_tagihan_w"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/modul_margin_big"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_side"
+            android:text="Billing Anda"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/modul_margin_big"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_w_internet"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_internet_putih_w"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/modul_margin_big"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_side"
+            android:text="Internet Usage"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/modul_margin_big"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_w_ticket"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_tiket_w"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/modul_margin_big"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_side"
+            android:text="Ticket"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/modul_margin_big"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_w_trouble"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_troble_analitic_w"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/modul_margin_big"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_side"
+            android:text="Trouble Analytic"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/modul_margin_big"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_w_couverage"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_coverage_area_w"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/modul_margin_big"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_side"
+            android:text="Coverage Area"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/modul_margin_big"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_w_logout"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/ic_exit"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/modul_margin_big"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_side"
+            android:text="Logout"/>
+    </LinearLayout>
+
+</LinearLayout>

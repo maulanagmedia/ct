@@ -179,7 +179,7 @@ public class LoginScreen extends AppCompatActivity {
 
     private void redirectToMain() {
 
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, HomeActivity.class);
         startActivity(intent);
         finish();
     }

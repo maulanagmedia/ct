@@ -64,7 +64,7 @@ public class PointerSpeedometer extends Speedometer {
         super.setIndicator(new SpindleIndicator(getContext())
                 .setIndicatorWidth(dpTOpx(16f))
                 .setIndicatorColor(0xFFFFFFFF));
-        super.setBackgroundCircleColor(Color.parseColor("#6a747e"));
+        super.setBackgroundCircleColor(Color.parseColor("#20BBCD"));
         super.setSpeedometerWidth(dpTOpx(10f));
     }
 

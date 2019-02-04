@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainTroubleAnalytic.Fragment.MainRouterStatus">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size2"
+                android:background="@drawable/ic_line"
+                android:layout_marginTop="@dimen/modul_margin_tanggung">
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/modul_margin_big"
+                android:layout_marginBottom="@dimen/modul_margin_tanggung"
+                android:layout_marginRight="@dimen/modul_margin_big"
+                android:layout_marginTop="@dimen/modul_margin_tanggung"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Server Status"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:textColor="@color/color_black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/modul_margin_default"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Uptime"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="11w 4d 8h 21m 20s"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Version"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="6.42.9 (long-term)"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Build Time"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Sep/27/2018 05:19:48"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Factory Software"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="6.35.3"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Free memory"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="1.0002,07"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Total memory"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="1.059.92"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="CPU"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="ARMv7"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="CPU Count"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="CPU Frequency"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="1400"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="CPU Load"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Free hd space"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="87,97"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Total hdd space"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="134,48"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.45"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="Architectire name"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.05"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text=":"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_black"
+                        android:text="arm"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

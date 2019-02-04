@@ -239,7 +239,7 @@ public class MainPing extends Fragment {
                             psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()));
 
                             // Get running processes
-                            long txBytes = TrafficStats.getTotalRxBytes() - mStartTX;
+                            /*long txBytes = TrafficStats.getTotalRxBytes() - mStartTX;
                             mStartTX = TrafficStats.getTotalRxBytes();
                             String uploadX = Long.toString(txBytes) + " bytes";
                             if (txBytes >= 1024) {
@@ -259,7 +259,7 @@ public class MainPing extends Fragment {
                             }// rxBytes>=1024
 
                             //Log.e("Total", "Bytes received " + android.net.TrafficStats.getMobileTxBytes());
-                            Log.e("Total", "Bytes received " + uploadX);
+                            Log.e("Total", "Bytes received " + uploadX);*/
                             tvUpload.setText("Processing...");
                         }
                     });

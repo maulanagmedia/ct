@@ -24,13 +24,13 @@
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/btn_process"
-            android:text="Mulai"
+            android:background="?attr/selectableItemBackground"
+            android:text="Start"
             android:id="@+id/btn_proses"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:textColor="@color/color_grey2"/>
+            android:textColor="@color/color_default"/>
 
         <Button
             android:layout_width="120dp"
@@ -39,10 +39,10 @@
             android:layout_marginLeft="32dp"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="@drawable/btn_process"
-            android:text="Hentikan"
+            android:background="?attr/selectableItemBackground"
+            android:text="Stop"
             android:id="@+id/btn_stop"
-            android:textColor="@color/color_grey2"/>
+            android:textColor="@color/color_red"/>
 
         <ProgressBar
             android:layout_width="wrap_content"

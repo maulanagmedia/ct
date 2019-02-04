@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/modul_margin_default"
-    android:paddingLeft="@dimen/modul_margin_default"
-    android:paddingRight="@dimen/modul_margin_default"
-    >
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size1"
+        android:background="@drawable/ic_line"
+        android:id="@+id/v_line"
+        android:layout_marginBottom="@dimen/modul_margin_tanggung"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/modul_margin_default"
-        android:background="@drawable/bg_input2">
+        android:layout_marginBottom="@dimen/modul_margin_default"
+        android:layout_below="@id/v_line"
+        android:paddingBottom="@dimen/modul_margin_default"
+        android:paddingLeft="@dimen/modul_margin_default"
+        android:paddingRight="@dimen/modul_margin_default">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +57,7 @@
                 android:layout_weight="0.4"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/modul_margin_small"
-                android:textColor="@color/md_red_700"
+                android:textColor="@color/color_black"
                 android:id="@+id/tv_item1"
                 android:text=""/>
 
@@ -59,7 +66,7 @@
                 android:layout_weight="0.6"
                 android:layout_marginRight="@dimen/modul_margin_small"
                 android:layout_height="wrap_content"
-                android:textColor="@color/md_red_700"
+                android:textColor="@color/color_black"
                 android:id="@+id/tv_item2"
                 android:text=""/>
         </LinearLayout>
@@ -110,7 +117,7 @@
                 android:layout_weight="0.4"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/modul_margin_small"
-                android:textColor="@color/md_red_700"
+                android:textColor="@color/color_black"
                 android:id="@+id/tv_item3"/>
 
             <TextView
@@ -118,7 +125,7 @@
                 android:layout_weight="0.3"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_item4"
-                android:textColor="@color/md_red_700"
+                android:textColor="@color/color_black"
                 android:layout_marginRight="@dimen/modul_margin_small"/>
 
             <TextView
@@ -126,9 +133,9 @@
                 android:layout_weight="0.3"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_item5"
-                android:textColor="@color/md_red_700"/>
+                android:textColor="@color/color_black"/>
         </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
